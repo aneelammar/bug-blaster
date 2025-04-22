@@ -9,9 +9,16 @@ export default function TicketItem({ ticket, dispatch }) {
     3: "priority-high",
   };
 
+  const priorityLabels = {
+    1: "Low",
+    2: "Medium",
+    3: "High",
+  };
+
   return (
     <div className="ticket-item">
-      <div className={`priority-dot ${priorityClass[ticket.priority]}`}> </div>
+      <div className={`priority-dot ${priorityClass[ticket.priority]}`}></div>
+
       <h3>{title}</h3>
       <p>{description}</p>
 
@@ -21,6 +28,7 @@ export default function TicketItem({ ticket, dispatch }) {
       >
         Delete
       </button>
+
       <button
         className="button"
         onClick={() =>
